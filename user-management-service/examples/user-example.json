@@ -1,0 +1,40 @@
+{
+  "user": {
+    "_id": "6903a322371aae28a73bcc11",
+    "email": "usuario@example.com",
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "username": "juanperez",
+    "role": "student",
+    "avatar": null,
+    "isEmailVerified": false,
+    "emailVerificationToken": null,
+    "passwordResetToken": null,
+    "passwordResetExpires": null,
+    "oauthProvider": null,
+    "oauthId": null,
+    "preferences": {
+      "language": "es",
+      "timezone": "UTC",
+      "notifications": {
+        "email": true,
+        "push": true
+      }
+    },
+    "learningProfile": {
+      "level": "beginner",
+      "skills": [],
+      "interests": []
+    },
+    "isActive": true,
+    "lastLogin": null,
+    "createdAt": "2025-10-30T17:40:50.781Z",
+    "updatedAt": "2025-10-30T17:40:50.781Z",
+    "__v": 0
+  },
+  "tokens": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDNhMzIyMzcxYWFlMjhhNzNiY2MxMSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzYxODQ2MDUxLCJleHAiOjE3NjI0NTA4NTF9.vuavg-spi97KuK6vUzivT-48oFkkjST-DaevfsPS00c",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDNhMzIyMzcxYWFlMjhhNzNiY2MxMSIsImVtYWlsIjoidGVzdEBleGFtcGxlLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzYxODQ2MDUxLCJleHAiOjE3NjQ0MzgwNTF9.-DYpqX9UAb02FF8Sa8UcFYswF_na-6oBINhuhcqxhAQ"
+  }
+}
+

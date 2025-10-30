@@ -1,0 +1,54 @@
+# ============================================================================
+# Dockerfile.dev - Para desarrollo con hot-reload
+# ============================================================================
+
+FROM node:18-alpine AS development
+
+# Metadatos
+LABEL maintainer="user-management-service"
+LABEL description="User Management Service - Desarrollo"
+
+# Instalar dependencias necesarias
+RUN apk add --no-cache \
+    git \
+    python3 \
+    make \
+    g++
+
+# Crear usuario no-root
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de configuración
+COPY package.json package-lock.json* ./
+
+# Instalar todas las dependencias (incluyendo devDependencies)
+# Usa npm install si no existe package-lock.json, npm ci si existe
+RUN if [ -f package-lock.json ]; then \
+      npm ci; \
+    else \
+      npm install; \
+    fi && \
+    npm cache clean --force
+
+# Copiar código fuente
+COPY . .
+
+# Cambiar permisos
+RUN chown -R nodejs:nodejs /app
+
+# Cambiar al usuario no-root
+USER nodejs
+
+# Exponer puerto
+EXPOSE 3001
+
+# Variable de entorno para desarrollo
+ENV NODE_ENV=development
+
+# Comando para desarrollo con nodemon (hot-reload)
+CMD ["npm", "run", "dev"]
+
